@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+<link rel="stylesheet" href="css/estilos.css">
+  <title>Document</title>
+  <script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.11.0/firebase-firestore.js"></script>
+</head>
+<body>
+<section class="container-fluid">
+  <section class="row justify-content-center">
+    <section class="col-12 col-sm-6 col-md-3">
+      <img src="images/user1.png" class="bg">
+      <div class="form form-container" id="login_form">
+        <h4 class="text-center font-weight-bold txt">Iniciar Sesion</h4>
+        <div class="form-group">
+          <label class="txt" for="exampleInputEmail1">Correo electronico</label>
+          <input type="email" class="form-control" id="email_field" aria-describedby="emailHelp" placeholder="Ingresa tu correo">
+        </div>
+        <div class="form-group">
+          <label class="txt" for="exampleInputPassword1">Contraseña</label>
+          <input type="password" class="form-control" id="password_field" placeholder="Ingresa tu contraseña">
+        </div>
+        <div class="form-group form-check">
+        </div>
+        <button type="submit" class="btn btn-primary btn-block" id="btnLogin">Entrar</button>
+        <!-- <button type="submit" class="btn btn-primary btn-block" id="registrar" onclick="Registrar()">Registrar</button> -->
+      </div>
+    </section>
+  </section>
+</section>
+  <!-- Optional JavaScript -->
+  <script src="jsCode/login.js"></script>
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+</body>
+</html>
