@@ -77,7 +77,7 @@ firebase.initializeApp({
   //Leer documentos
 var tabla = document.getElementById('tabla');
 db.collection("Clientes").onSnapshot((querySnapshot) =>{
-    tabla.innerHTML = "";
+    tabla.innerHTML = '';
     querySnapshot.forEach((doc)=>{
 
         console.log(`${doc.id} => ${doc.data().Nombre}`);
