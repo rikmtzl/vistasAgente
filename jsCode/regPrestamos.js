@@ -14,6 +14,16 @@ firebase.initializeApp({
    btnLogout.addEventListener('click', e => {
      firebase.auth().signOut();
    })
+
+    firebase.auth().onAuthStateChanged(firebaseUser => {
+     if (!firebaseUser) {
+       window.location.replace("https://rikmtzl.github.io/vistasAgente/index.html");
+       // location.href ="file:///C:/xampp/htdocs/PrestaCasa/Vistas%20Agente/RegClientes.html";
+     }else {
+       console.log('si logeado');
+     }
+   });
+   var user = firebase.auth().currentUser;
   
 //Leer clientes
     db.collection("Clientes").get().then(function(querySnapshot) {
