@@ -15,7 +15,7 @@ firebase.initializeApp({
      firebase.auth().signOut();
    })
     
-    Firebase.auth().onAuthStateChanged(firebaseUser => {
+    firebase.auth().onAuthStateChanged(firebaseUser => {
      if (!firebaseUser) {
        window.location.replace("https://rikmtzl.github.io/vistasAgente/index.html");
        // location.href ="file:///C:/xampp/htdocs/PrestaCasa/Vistas%20Agente/RegClientes.html";
