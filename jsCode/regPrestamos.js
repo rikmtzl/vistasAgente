@@ -10,7 +10,10 @@ firebase.initializeApp({
   // Initialize Cloud Firestore through Firebase
   var db = firebase.firestore();
 
-
+    //Cerrar sesion
+    btnLogout.addEventListener('click', e => {
+        firebase.auth().signOut();
+    })
   
 //Leer clientes
     db.collection("Clientes").get().then(function(querySnapshot) {
