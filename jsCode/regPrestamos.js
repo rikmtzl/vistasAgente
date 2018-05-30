@@ -6,7 +6,7 @@ firebase.initializeApp({
     storageBucket: "prestacasa-1758e.appspot.com",
     messagingSenderId: "315948810598"
   });
-  
+
   // Initialize Cloud Firestore through Firebase
   var db = firebase.firestore();
 
@@ -14,7 +14,17 @@ firebase.initializeApp({
     btnLogout.addEventListener('click', e => {
         firebase.auth().signOut();
     })
-  
+
+    firebase.auth().onAuthStateChanged(firebaseUser => {
+      if (!firebaseUser) {
+        window.location.replace("https://rikmtzl.github.io/vistasAgente/index.html");
+        // location.href ="file:///C:/xampp/htdocs/PrestaCasa/Vistas%20Agente/RegClientes.html";
+      }else {
+        console.log('si logeado');
+      }
+    });
+    var user = firebase.auth().currentUser;
+
 //Leer clientes
     db.collection("Clientes").get().then(function(querySnapshot) {
         querySnapshot.forEach(function(doc) {
@@ -27,13 +37,13 @@ firebase.initializeApp({
         });
     });
 
-    
+
 
 
 function interes(){
     var interes1 = 0;
     var cantidad1 = document.getElementById('cantidad').value;
-    
+
     interes1 = (cantidad1*0.05)/4;
 
     document.getElementById('interes').value = interes1;
@@ -41,12 +51,12 @@ function interes(){
 }
 
 function pago(){
-    
+
     var cantidad = document.getElementById('cantidad').value;
-    var semanas = document.getElementById('semanas').value;   
+    var semanas = document.getElementById('semanas').value;
     var interes = document.getElementById('interes').value;
-    
-    
+
+
     var pago = cantidad/semanas;
 
     var total = parseInt(pago) + parseInt(interes);
@@ -71,7 +81,7 @@ function pago(){
 
     var myDate = new Date();
     var f = new Date();
-    
+
     myDate.getFullYear();
     myDate.getDate();
     myDate.getMonth();
@@ -88,8 +98,8 @@ function pago(){
 
 
 
- 
-    
+
+
 
 
 //Crear Documentos
@@ -121,10 +131,9 @@ function pago(){
         document.getElementById('interes').value = '';
         document.getElementById('pSemanal').value = '';
         document.getElementById('pTotal').value = '';
-        
+
     })
     .catch(function(error) {
         console.error("Error adding document: ", error);
     });
   }
-
