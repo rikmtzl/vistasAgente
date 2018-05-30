@@ -13,6 +13,7 @@ firebase.initializeApp({
   //Cerrar sesion
    btnLogout.addEventListener('click', e => {
      firebase.auth().signOut();
+     window.location.replace("https://rikmtzl.github.io/vistasAgente/index.html");
    })
   //Crear Documentos
   function guardarC(){
